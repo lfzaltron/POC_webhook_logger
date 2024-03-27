@@ -30,7 +30,7 @@ app.get("/requests", (req, res) => {
 
 // Endpoint to display clear all received requests
 app.get("/clear", (req, res) => {
-  receivedRequests = [];
+  receivedRequests.splice(0, receivedRequests.length);
   res.sendStatus(200);
 });
 
