@@ -28,6 +28,12 @@ app.get("/requests", (req, res) => {
   res.json(receivedRequests);
 });
 
+// Endpoint to display clear all received requests
+app.get("/clear", (req, res) => {
+  receivedRequests = [];
+  res.sendStatus(200);
+});
+
 // Endpoint to display all received requests
 app.get("/", (req, res) => {
   res.sendStatus(200);
