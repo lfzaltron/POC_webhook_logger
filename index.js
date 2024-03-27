@@ -28,6 +28,11 @@ app.get("/requests", (req, res) => {
   res.json(receivedRequests);
 });
 
+// Endpoint to display all received requests
+app.get("/", (req, res) => {
+  res.sendStatus(200);
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
