@@ -15,12 +15,10 @@ app.post("/webhook", (req, res) => {
   const { body } = req;
 
   // Store the received request in memory
-  receivedRequests.push({
-    date: new Date(),
-    body,
-  });
+  receivedRequests.push(body);
 
-  res.sendStatus(200); // Respond with 200 OK to acknowledge receipt
+  // To test what happens when sendgrid don't get 200
+  res.sendStatus(500); // Respond with 200 OK to acknowledge receipt
 });
 
 // Endpoint to display all received requests
